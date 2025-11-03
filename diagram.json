@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "author": "Péntek Dávid",
+  "editor": "",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 67.8, "left": 37.8, "attrs": {} },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "ssd1306",
+      "top": 275.5,
+      "left": 107.5,
+      "attrs": { "i2c-address": "0x3D" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-up",
+      "top": 399.8,
+      "left": 134.4,
+      "attrs": { "color": "red", "key": "ArrowUp" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-down",
+      "top": 534.2,
+      "left": 134.4,
+      "attrs": { "color": "red", "key": "ArrowDown" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-left",
+      "top": 467,
+      "left": 9.6,
+      "attrs": { "color": "red", "key": "ArrowLeft" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn-right",
+      "top": 457.4,
+      "left": 249.6,
+      "attrs": { "color": "red", "key": "ArrowRight" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 476.6,
+      "left": 134.4,
+      "attrs": { "color": "green", "key": "Enter" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.2", "ssd1306:GND", "black", [ "v12", "*", "h0" ] ],
+    [ "uno:5V", "ssd1306:VIN", "red", [ "v16", "*", "h0" ] ],
+    [ "uno:A4", "ssd1306:DATA", "blue", [ "v20", "*", "h0" ] ],
+    [ "uno:A5", "ssd1306:CLK", "purple", [ "v24", "*", "h0" ] ],
+    [ "uno:2", "btn-up:2.r", "yellow", [ "v-20", "*", "h100" ] ],
+    [ "uno:GND.1", "btn-up:1.l", "black", [ "v-20", "h-116.3", "v356.2" ] ],
+    [ "uno:3", "btn-down:2.r", "orange", [ "v-30", "*", "h110" ] ],
+    [ "uno:GND.1", "btn-down:1.l", "black", [ "v-20", "*", "h-140" ] ],
+    [ "uno:GND.1", "btn-left:1.l", "black", [ "v-20", "*", "h-90" ] ],
+    [ "uno:5", "btn-right:2.r", "purple", [ "v-50", "*", "h80" ] ],
+    [ "uno:GND.1", "btn-right:1.l", "black", [ "v-20", "*", "h-190", "v-11" ] ],
+    [ "btn1:1.l", "uno:GND.1", "black", [ "h-28.8", "v19.2", "h-163.2", "v-470.4", "h193.1" ] ],
+    [ "btn1:2.r", "uno:7", "green", [ "h153.8", "v-489.4", "h-144" ] ],
+    [ "btn-left:2.r", "uno:8", "red", [ "h9.8", "v86.6", "h384", "v-595.2", "h-259.2" ] ]
+  ],
+  "dependencies": {}
+}
